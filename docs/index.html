@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CISSE PIECES DETACHEES - CLOUD</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+:root{--g:#0f3d2e;--o:#e8720c;--bg:#fff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial;background:#fff;color:#0a1a12;font-weight:700}
+.stripe{height:12px;background:linear-gradient(var(--g) 0 4px,transparent 4px 5px,var(--o) 5px 8px,transparent 8px 9px,var(--g) 9px 14px)}
+.wrap{max-width:1150px;margin:auto;padding:12px}h1{color:var(--g);margin:6px 0 0;text-transform:uppercase;letter-spacing:.5px}
+#grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.mb{border:0;border-radius:12px;padding:12px;color:#fff;font-weight:800;cursor:pointer;display:flex;gap:8px;align-items:center;font-size:14px}.mb.g{background:var(--g)}.mb.o{background:var(--o)}
+.sec{border:2px solid var(--g);border-radius:14px;padding:12px;margin:12px 0;background:#fff}.kpi{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.k{border:2px solid var(--g);border-left:10px solid var(--o);border-radius:12px;padding:10px;background:#fff}.k .l{font-size:11px;opacity:.7;text-transform:uppercase}.k .v{font-size:22px;color:var(--g)}
+.sc{overflow:auto;border:2px solid var(--g);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:600px}th{background:var(--g);color:#fff;padding:8px;text-align:left;font-size:12px}td{padding:8px;border-top:1px solid #ccc;font-size:13px;font-weight:600}
+input,select,textarea{width:100%;padding:10px;border:2px solid var(--g);border-radius:8px;font-weight:700;margin:4px 0}
+.b{border:0;border-radius:8px;padding:10px 14px;background:var(--g);color:#fff;font-weight:800;cursor:pointer}.b.o{background:var(--o)}.b.s{padding:6px 8px;font-size:12px}
+.bar{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.badge{background:var(--o);color:#fff;border-radius:6px;padding:2px 7px;font-size:11px}
+.sync{background:#e8f5e9;border:2px solid var(--g);border-radius:10px;padding:8px 12px;margin:8px 0;display:flex;justify-content:space-between;align-items:center}
+#md{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:60;padding:16px;overflow:auto;display:none}#md .box{background:#fff;border:3px solid var(--g);border-radius:16px;padding:16px;max-width:560px;margin:auto}
+</style></head><body>
+<div class="stripe"></div>
+<div class="wrap">
+<h1>CISSE PIECES DETACHEES</h1>
+<small>Version CLOUD synchronisée - Temps réel multi-appareils</small>
+<div class="sync"><div><b id="syncText">Connexion Cloud...</b><br><small id="syncDetail">Supabase actif</small></div><div><span class="badge" id="syncState">SYNC</span> <span class="badge" id="syncCount" style="background:var(--g)">0</span></div></div>
+<hr style="border:0;border-top:3px solid var(--o);margin:8px 0">
+<div id="grid"></div>
+<h2 id="title" style="color:var(--g);font-size:26px;margin:10px 0"></h2>
+<div id="main"></div>
+</div>
+<div class="stripe"></div>
+<div id="lk" style="position:fixed;inset:0;z-index:99;background:linear-gradient(#134a37,#07241a);display:grid;place-items:center;padding:20px">
+<div style="background:#fff;border:3px solid #0f3d2e;border-radius:20px;width:min(100%,380px);padding:0 20px 20px;text-align:center"><div style="height:12px;background:#e8720c;margin:0 -20px 16px"></div>
+<h2 style="color:#0f3d2e">CISSE PIECES</h2><p>PIN 4 chiffres</p>
+<div id="dots" style="display:flex;gap:14px;justify-content:center;margin-bottom:16px"></div>
+<div id="pad" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px"></div>
+<div id="lkm" style="color:#b00;font-weight:800;margin-top:10px;min-height:18px"></div><small>PIN defaut: 0000 - Synchronisé Cloud</small></div></div>
+<div id="md"><div class="box" id="mdBox"></div></div>
